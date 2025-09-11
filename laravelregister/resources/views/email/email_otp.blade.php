@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Your OTP Code</title>
+</head>
+<body>
+    <p>Hello,</p>
+    <p>your One-Time Password (OTP) is: <b>{{ $otp }}</b></p>
+    <p>Place this code in the input field to complete the verification process.</p>
+    <p>Best regards,</p>
+</body>
+</html>
