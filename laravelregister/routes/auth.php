@@ -12,33 +12,35 @@
     use Illuminate\Support\Facades\Route;
     use App\Http\Controllers\RegisterWithOtpController;
 
-
     Route::middleware('guest')->group(function () {
 
+        //     Route::get('/dashboard', function () {
+        //     return view('dashboard');
+        // })->name('dashboard');
+        Route::get('register', [RegisteredUserController::class, 'create'])
+            ->name('register');
         
-        // Route::get('register', [RegisteredUserController::class, 'create'])
-        //     ->name('register');
+        Route::get('login', [AuthenticatedSessionController::class, 'create'])
+        ->name('login');
+        
+        Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])
+            ->name('password.request');
 
         Route::get('register', [RegisterWithOtpController::class, 'create'])
-            ->name('register');
-
-        // Route::post('register', [RegisteredUserController::class, 'store']);
+        ->name('register');
+        Route::post('register', [RegisteredUserController::class, 'store'])->name('register');
 
         Route::post('register', [RegisterWithOtpController::class, 'store']);
 
         Route::get('verify/otp', [RegisterWithOtpController::class, 'verifyOtp'])->name('verify.otp');
-
-        Route::get('login', [AuthenticatedSessionController::class, 'create'])
-            ->name('login');
-
+        Route::post('verify/otp', [RegisterWithOtpController::class, 'verifyOtpStore'])
+    ->name('verify.otp.store');
+    
         Route::post('login', [AuthenticatedSessionController::class, 'store']);
-
-        Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])
-            ->name('password.request');
 
         Route::post('forgot-password', [PasswordResetLinkController::class, 'store'])
             ->name('password.email');
-    
+        
         Route::get('reset-password/{token}', [NewPasswordController::class, 'create'])
             ->name('password.reset');
 

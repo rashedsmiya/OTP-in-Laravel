@@ -7,9 +7,11 @@
     <title>Your OTP Code</title>
 </head>
 <body>
+
     <p>Hello,</p>
-    <p>your One-Time Password (OTP) is: <b>{{ $otp }}</b></p>
+    <p>your One-Time Password (OTP) is: <strong>{{ $otp }}</strong></p>
     <p>Place this code in the input field to complete the verification process.</p>
     <p>Best regards,</p>
+    
 </body>
 </html>
