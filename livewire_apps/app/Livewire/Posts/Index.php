@@ -12,12 +12,10 @@
     {
         use WithPagination;       
         public $createMode = false;
-        
         public $search = '';
         public $editId = null; 
         public $title = '';
         public $content = '';
-
         public $filter = '';
 
         public function render()
@@ -85,7 +83,7 @@
         }
 
         public function create()
-    {
+       {
         $this->validate([
             'title' => 'required|min:3',
             'content' => 'required|min:5',
@@ -98,19 +96,19 @@
 
         $this->reset(['title', 'content', 'createMode']);
         session()->flash('success', 'Post created successfully!');
-    }
-    public function setStatus( $status ){
+        }
+        public function setStatus( $status ){
         $this->filter = $status;
         $this->render();
-    }
+       }
 
-    public function toggleStatus($id)
-    {
+        public function toggleStatus($id)
+       {
         $post = Post::findOrFail($id);
         $post->status = !$post->status;
         $post->save();
 
         $this->render();
-    }
+       }
 
 }

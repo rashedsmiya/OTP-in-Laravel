@@ -20,34 +20,33 @@
                 <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="-mr-1 size-5 text-gray-400">
                 <path d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
                 </svg>  
-            </button>  
+            </button>   
 
             <el-menu anchor="bottom end" popover class="w-56 origin-top-right rounded-md bg-gray-800 outline-1 -outline-offset-1 outline-white/10 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in">
 
                 <div class="py-1">
-                    <button wire:click="setStatus('all')" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden">All </button>
-                    <button wire:click="setStatus('active')"  class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden">Active</button>
-                    <button wire:click="setStatus('inactive')"  class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden">Inactive</button>
+                    <button wire:click="setStatus('all')" class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden"> All </button>
+                    <button wire:click="setStatus('active')"  class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden"> Active </button>
+                    <button wire:click="setStatus('inactive')"  class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden"> Inactive </button>
                 </div>  
-                
+                     
             </el-menu>
             </el-dropdown>
 
         <button wire:click="$toggle('createMode')"
             class="bg-blue-500 text-white px-4 py-2 rounded">
-        + Create
-        </button>       
-        </div>
-            
+        + Create        
+        </button>          
+        </div>          
+
         @if($createMode)
             <div class="bg-gray-500 p-4 rounded mb-4">
                 <input type="text" wire:model="title" placeholder="Title" class="border p-2 rounded w-full mb-2">
                 <textarea wire:model="content" placeholder="Content" class="border p-2 rounded w-full mb-2"></textarea>
                 <button wire:click="create" class="bg-green-500 text-white px-4 py-2 rounded">Save</button>
                 <button wire:click="$set('createMode', false)" class="bg-red-500 text-white px-4 py-2 rounded">Cancel</button>
-            </div>
-        @endif
-
+            </div>      
+        @endif          
 
     @if($editId)
     <div class="mb-4 p-4 border rounded bg-gray-500">
@@ -80,7 +79,7 @@
             <th class="border p-2">Active</th>
         </tr>   
 
-        </thead>
+        </thead>  
 
         <tbody> 
 
