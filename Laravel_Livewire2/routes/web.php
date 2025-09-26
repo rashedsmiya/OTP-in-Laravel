@@ -17,6 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/counter', function () {
-    return view('counterView');
+Route::get('/register', function () {
+    return view('student');
 });

@@ -10,7 +10,7 @@
     </head>
     <body>
       
-        <livewire:counter/>
+        <livewire:student/>
 
         @livewireScripts
       </body>
