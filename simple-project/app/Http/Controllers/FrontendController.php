@@ -11,7 +11,23 @@ class FrontendController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $title = 'Admin Panel';
+
+        return view('index', compact('title'));
+    }
+
+    public function contact()
+    {
+        $title = 'Contact';
+
+        return view('contact', compact('title'));
+    }
+
+    public function about()
+    {
+        $title = 'Contact';
+
+        return view('about', compact('title'));
     }
 
     /**

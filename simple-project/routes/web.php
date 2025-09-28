@@ -4,6 +4,7 @@ use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Route;
 
 /*
+
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -12,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider and all of them will
 | be assigned to the "web" middleware group. Make something great!
 |
+
 */
 
-Route::get('/', [FrontendController::class, 'index'])->name('index');
+Route::get('/', [FrontendController::class, 'index'])->name('front.home');
+
+Route::get('/contact', [FrontendController::class, 'contact'])->name('front.contact');
+
+Route::get('/about', [FrontendController::class, 'about'])->name('front.about');
