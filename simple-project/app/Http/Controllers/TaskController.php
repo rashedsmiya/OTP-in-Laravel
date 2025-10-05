@@ -2,32 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class FrontendController extends Controller
+class TaskController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $title = 'Admin Panel';
-
-        return view('index', compact('title'));
-    }
-
-    public function contact()
-    {
-        $title = 'Contact';
-
-        return view('contact', compact('title'));
-    }
-
-    public function about()
-    {
-        $title = 'Contact';
-
-        return view('about', compact('title'));
+        $tasks = Task::all();
+        dd($tasks);
     }
 
     /**
@@ -35,13 +21,23 @@ class FrontendController extends Controller
      */
     public function create()
     {
-        //
+        $users = User::pluck('name', 'id');
+
+        return view('modules.task.create', compact('users'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request) {}
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+
+        dd($request->all());
+    }
 
     /**
      * Display the specified resource.

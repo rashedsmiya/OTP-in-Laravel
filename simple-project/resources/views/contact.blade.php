@@ -1,5 +1,5 @@
 @extends('layouts.master')
-
+@section('page_title', 'Contact Us')
 @section('content')
  <div class="container-fluid px-4">
     <h1 class="mt-4">Contact Us</h1>

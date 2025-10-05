@@ -13,9 +13,13 @@
                                 About Us
                             </a>
 
-                            <a class="nav-link" href="{{ route('front.contact') }}">
+                        <a class="nav-link" href="{{ route('front.contact') }}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Contact Us
+                            </a>
+                             <a class="nav-link" href="{{ route('task.create') }}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Create Task
                             </a>
                         </div>
                     </div>

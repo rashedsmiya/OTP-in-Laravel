@@ -15,6 +15,5 @@
             </div>
         </div>
           @include('includes.script')
-        
     </body>
 </html>
